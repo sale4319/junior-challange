@@ -32,8 +32,12 @@ function App() {
   };
   return (
     <>
-      <button onClick={handleUndo}>Undo</button>
-      <button onClick={handleRedo}>Redo</button>
+      <button disabled={points.length === 0} onClick={handleUndo}>
+        Undo
+      </button>
+      <button disabled={removedPoints.length === 0} onClick={handleRedo}>
+        Redo
+      </button>
       <div className="app" onClick={handlePlaceCircle}>
         {points.map((point, index) => (
           <div
